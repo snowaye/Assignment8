@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment7_Java</string>
+    <string name="app_name">Assignment8</string>
     <string name="title_movie">Movie</string>
     <string name="label_imdb">IMdb</string>
     <string name="label_rotton_tomatto">Rotten Tomatto</string>

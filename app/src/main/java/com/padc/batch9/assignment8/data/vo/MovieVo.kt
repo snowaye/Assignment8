@@ -28,4 +28,12 @@ data class MovieVo(
     @SerializedName("poster")
     var poster: String
 ) {
+
+    fun getGenreStringList():List<String> {
+        val genreStringList:List<String> = ArrayList<String>()
+        for (temp in genre) {
+            genreStringList.toMutableList().add(temp.name)
+        }
+        return genreStringList
+    }
 }

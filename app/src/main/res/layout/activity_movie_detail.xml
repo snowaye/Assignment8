@@ -8,7 +8,7 @@
     android:background="@drawable/bg_main">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgv_movie"
+        android:id="@+id/imgv_movie_detail"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"/>
@@ -55,7 +55,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_imdb"
+                    android:id="@+id/tv_imdb_detail"
                     android:text="7.5"
                     android:gravity="center"
                     android:layout_marginBottom="@dimen/inner_margin"
@@ -79,7 +79,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_rotten_tomato"
+                    android:id="@+id/tv_rotten_tomato_detail"
                     android:text="7.5"
                     android:gravity="center"
                     android:layout_marginBottom="@dimen/inner_margin"
@@ -103,7 +103,7 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_meta_centric"
+                    android:id="@+id/tv_meta_centric_detail"
                     android:text="7.5"
                     android:gravity="center"
                     android:layout_marginBottom="@dimen/inner_margin"

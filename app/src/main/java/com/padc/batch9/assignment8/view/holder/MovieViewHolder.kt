@@ -17,10 +17,10 @@ class MovieViewHolder(itemView: View, private val delegate:MovieItemDelegate):Ba
 
     override fun bindData(data: MovieVo) {
         itemView.tv_movie_name.text = data.movieName
-        itemView.tv_genre.text = data.genre.toString()
+        itemView.tv_genre.text = data.getGenreStringList().toString()
         itemView.tv_imdb.text = data.imdb.toString()
         itemView.tv_rotten_tomato.text = data.rottenTomato.toString()
         itemView.tv_meta_centric.text = data.metaCentric.toString()
-        Glide.with(itemView).load(data.poster).into(itemView.imgv_movie);
+        Glide.with(itemView).load(data.poster).into(itemView.imgv_movie)
     }
 }

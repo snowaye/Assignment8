@@ -7,9 +7,6 @@ object MovieModelImpl:BaseModel(), MovieModel{
     private lateinit var movieDataRepository:Map<Int, MovieVo>
 
     override fun getMovie(onSuccess: (List<MovieVo>) -> Unit, onFailure: (String) -> Unit) {
-//        for (item in listOf(onSuccess).iterator()) {
-//            movieDataRepository
-//        }
 
         dataAgent.getMovie(
             {

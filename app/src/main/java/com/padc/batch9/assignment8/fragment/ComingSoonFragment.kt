@@ -15,7 +15,7 @@ import com.padc.batch9.assignment8.delegate.MovieDataDelegate
 import com.padc.batch9.assignment8.delegate.MovieItemDelegate
 import kotlinx.android.synthetic.main.fragment_now_showing.*
 
-class NowShowingFragment:Fragment(), MovieItemDelegate {
+class ComingSoonFragment:Fragment(), MovieItemDelegate {
 
     var list:List<MovieVo> = ArrayList<MovieVo>()
     lateinit var movieDelegate:MovieDataDelegate
@@ -30,7 +30,7 @@ class NowShowingFragment:Fragment(), MovieItemDelegate {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view:View = inflater.inflate(R.layout.fragment_now_showing, container, false)
+        val view:View = inflater.inflate(R.layout.fragment_coming_soon, container, false)
         val layoutManager:LinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         recv_movie.layoutManager = layoutManager
         val adapter:MovieAdapter = MovieAdapter(this)

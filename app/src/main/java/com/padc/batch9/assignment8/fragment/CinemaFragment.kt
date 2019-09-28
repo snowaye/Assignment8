@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.padc.batch9.assignment8.R
 import com.padc.batch9.assignment8.activity.MovieDetailActivity
 import com.padc.batch9.assignment8.adapter.MovieAdapter
@@ -32,10 +33,11 @@ class CinemaFragment:Fragment(), MovieItemDelegate {
     ): View? {
         val view:View = inflater.inflate(R.layout.fragment_cinema, container, false)
         val layoutManager:LinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        recv_movie.layoutManager = layoutManager
+        var recyclerView = view.findViewById<RecyclerView>(R.id.recv_movie)  as RecyclerView
+        recyclerView.layoutManager = layoutManager
         val adapter:MovieAdapter = MovieAdapter(this)
         adapter.setNewData(list.toMutableList())
-        recv_movie.adapter = adapter
+        recyclerView.adapter = adapter
         return view
     }
 

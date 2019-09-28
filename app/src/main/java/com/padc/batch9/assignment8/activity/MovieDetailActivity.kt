@@ -12,7 +12,6 @@ import com.padc.batch9.assignment8.util.FunUtil
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import kotlinx.android.synthetic.main.listitem_movie.*
 import kotlinx.android.synthetic.main.listitem_movie.tv_genre
-import kotlinx.android.synthetic.main.listitem_movie.tv_movie_name
 
 class MovieDetailActivity : BaseActivity() {
 
@@ -31,13 +30,13 @@ class MovieDetailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
-        FunUtil.setStatusBarColor(this, R.color.textColorMain)
+        FunUtil.setStatusBarColor(this, R.color.colorPrimary)
         id = intent.getIntExtra(IE_MOVIE_ID, -1)
         val movieVo = model.getMovieById(id)
         if (movieVo != null) {
             tv_movie_name.text = movieVo.movieName
             tv_genre.text = movieVo.genre.toString()
-            tv_imdb.text = movieVo.imdb.toString()
+            tv_imdb_detail.text = movieVo.imdb.toString()
             tv_rotten_tomato_detail.text = movieVo.rottenTomato.toString()
             tv_meta_centric_detail.text =movieVo.metaCentric.toString()
             Glide.with(this).load(movieVo.poster).into(imgv_movie_detail)

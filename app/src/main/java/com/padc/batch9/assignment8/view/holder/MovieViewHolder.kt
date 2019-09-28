@@ -9,15 +9,17 @@ import kotlinx.android.synthetic.main.listitem_movie.view.*
 class MovieViewHolder(itemView: View, private val delegate:MovieItemDelegate):BaseViewHolder<MovieVo>(itemView) {
 
     init {
-        val id = data?.id
-        data?.id?.let {id->
-            delegate.onTapItemEvent(id)
+        itemView.setOnClickListener {
+            val id = data?.id
+            data?.id?.let {id->
+                delegate.onTapItemEvent(id)
+            }
         }
     }
 
     override fun bindData(data: MovieVo) {
-        itemView.tv_movie_name.text = data.movieName
-        itemView.tv_genre.text = data.getGenreStringList().toString()
+        itemView.tv_name.text = data.movieName
+        itemView.tv_genre.text = data.genre.toString()
         itemView.tv_imdb.text = data.imdb.toString()
         itemView.tv_rotten_tomato.text = data.rottenTomato.toString()
         itemView.tv_meta_centric.text = data.metaCentric.toString()

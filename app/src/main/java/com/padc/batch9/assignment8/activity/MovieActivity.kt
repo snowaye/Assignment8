@@ -52,9 +52,6 @@ class MovieActivity : BaseActivity(), MovieDataDelegate {
 
     private fun setupViewPager(viewPager: ViewPager) {
         var viewPagerAdapter = MyViewPagerAdapter(supportFragmentManager)
-        viewPagerAdapter.addFragment(NowShowingFragment(), resources.getString(R.string.label_now_showing))
-        viewPagerAdapter.addFragment(CinemaFragment(), resources.getString(R.string.label_cinema))
-        viewPagerAdapter.addFragment(ComingSoonFragment(), resources.getString(R.string.label_coming_soon))
         Log.i(tag, "Adaper Size=${viewPagerAdapter.count}")
         viewPager.adapter = viewPagerAdapter
     }

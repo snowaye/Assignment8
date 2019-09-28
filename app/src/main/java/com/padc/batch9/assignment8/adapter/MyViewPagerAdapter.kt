@@ -5,26 +5,37 @@ package com.padc.batch9.assignment8.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import com.padc.batch9.assignment8.fragment.CinemaFragment
+import com.padc.batch9.assignment8.fragment.ComingSoonFragment
+import com.padc.batch9.assignment8.fragment.NowShowingFragment
 
 class MyViewPagerAdapter(val fragmentManager: FragmentManager): FragmentStatePagerAdapter(fragmentManager){
 
-    val mFragmentList:List<Fragment> = ArrayList<Fragment>()
-    val mFragmentTitleList:List<String> = ArrayList<String>()
 
     override fun getItem(position: Int): Fragment {
-        return mFragmentList.get(position)
+        var fragment: Fragment? = null
+        when (position) {
+            0 -> fragment = NowShowingFragment()
+            1 -> fragment = CinemaFragment()
+            2 -> fragment = ComingSoonFragment()
+        }
+
+        return fragment!!
+
     }
 
-    fun addFragment(fragment: Fragment, title: String) {
-        mFragmentList.toMutableList().add(fragment)
-        mFragmentTitleList.toMutableList().add(title)
-    }
 
     override fun getCount(): Int {
-        return mFragmentList.size
+        return 3
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return mFragmentTitleList[position]
+        var titel:String? = null
+        when (position) {
+            0 ->titel = "Now Showing"
+            1 ->titel = "Cinema"
+            2 ->titel = "Coming Soon"
+        }
+        return titel
     }
 }
